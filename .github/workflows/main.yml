@@ -30,4 +30,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: builded artifacts
-          path: .pio/build/*/*.bin
+          path: |
+            .pio/build/*/*.bin
+            .pio/build/*/*.uf2
