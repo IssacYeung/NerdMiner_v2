@@ -74,7 +74,7 @@ For boards with native USB support (ESP32-S3, ESP32-C3), you can use UF2 files f
 1. Drag and drop the `.uf2` file to the mounted drive
 1. The board will automatically flash and reboot
 
-Note: UF2 support is available for ESP32-S3 and ESP32-C3 based boards with TinyUF2 bootloader.
+Note: UF2 support is available for ESP32-S3 and ESP32-C3 based boards with TinyUF2 bootloader. See [UF2 Support Documentation](docs/UF2_SUPPORT.md) for detailed information.
 
 #### Standard tool
 
