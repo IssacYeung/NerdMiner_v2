@@ -64,6 +64,18 @@ Easyiest way to flash firmware. Build your own miner using the folowing firwmare
 1. Get a TTGO T-display S3 or any other supported board
 1. Go to NM2 flasher online: https://flasher.bitronics.store/ (recommend via Google Chrome incognito mode)
 
+#### UF2 Firmware (ESP32-S3 and ESP32-C3 boards)
+
+For boards with native USB support (ESP32-S3, ESP32-C3), you can use UF2 files for easy drag-and-drop flashing:
+
+1. Build the firmware using PlatformIO - UF2 files will be automatically generated alongside the .bin files
+1. Put your board into USB bootloader mode (varies by board - typically hold BOOT button while connecting USB)
+1. Your board should appear as a USB mass storage device
+1. Drag and drop the `.uf2` file to the mounted drive
+1. The board will automatically flash and reboot
+
+Note: UF2 support is available for ESP32-S3 and ESP32-C3 based boards with TinyUF2 bootloader. See [UF2 Support Documentation](docs/UF2_SUPPORT.md) for detailed information.
+
 #### Standard tool
 
 Create your own miner using the online firwmare flash tool **ESPtool** and one of the **binary files** that you will find in the `bin` folder.
@@ -184,6 +196,16 @@ With the USB-C port to the right:
 - Current project works with ESP32-S3 and ESP32-wroom.
 - Partition squeme should be build as huge app
 - All libraries needed shown on platform.ini
+- UF2 firmware format is automatically generated for ESP32-S3 and ESP32-C3 boards during build
+
+### Building from Source
+
+To build the firmware from source:
+
+1. Install PlatformIO Core or PlatformIO IDE
+2. Clone this repository
+3. Run `pio run` to build all environments, or `pio run -e <environment>` for a specific board
+4. For ESP32-S3 and ESP32-C3 boards, both `.bin` and `.uf2` files will be generated in `.pio/build/<environment>/`
 
 ### Job done
 
@@ -203,6 +225,7 @@ With the USB-C port to the right:
 - [x] Code changes to support adding multiple boards
 - [x] Add support to TTGO T-display 1.14
 - [x] Add support to Amoled
+- [x] Add UF2 compilation support for ESP32-S3 and ESP32-C3 boards
 
 ### In process
 
