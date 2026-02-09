@@ -46,7 +46,7 @@ def convert_from_uf2(buf):
         if datalen > 476:
             assert False, "Invalid UF2 data size at " + str(ptr)
         newaddr = hd[3]
-        if curraddr == None:
+        if curraddr is None:
             appstartaddr = newaddr
             curraddr = newaddr
         padding = newaddr - curraddr
@@ -165,7 +165,7 @@ def main():
         outbuf = convert_to_uf2(inpbuf)
         extension = ".uf2"
 
-    if args.output == None:
+    if args.output is None:
         args.output = os.path.splitext(args.input)[0] + extension
     
     with open(args.output, "wb") as f:
